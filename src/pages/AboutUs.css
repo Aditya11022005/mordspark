@@ -1,0 +1,790 @@
+/* ================================
+   ABOUT US - GOLDEN RATIO RESPONSIVE
+   ================================ */
+
+.about-root {
+  font-family: "Inter", sans-serif;
+  color: #3a4a5a;
+}
+
+/* ================================
+   BASE UTILITIES
+   ================================ */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
+.bg-light {
+  background-color: #f0f4f8;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.subheading {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e90ff;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.618rem; /* Golden ratio */
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.618; /* Golden ratio */
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
+
+.page-hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.page-hero p {
+  font-size: 1.25rem;
+  line-height: 1.618;
+}
+
+/* ================================
+   HERO SPLIT / STORY GRID
+   ================================ */
+
+.hero-split,
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.story-text h2,
+.hero-text h2 {
+  font-size: 2.618rem;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.story-text p,
+.hero-text p {
+  font-size: 1.125rem;
+  line-height: 1.618;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.story-image img,
+.hero-visual img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.story-highlight {
+  background: #f0f4f8;
+  padding: 24px;
+  border-left: 4px solid #0a3d62;
+  font-style: italic;
+  margin: 24px 0;
+  font-size: 1.125rem;
+  line-height: 1.618;
+}
+
+.signature {
+  opacity: 0.6;
+  margin-top: 20px;
+  max-width: 200px;
+}
+
+/* ================================
+   MISSION VISION VALUES
+   ================================ */
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.mvv-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.mvv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.mvv-icon {
+  width: 64px;
+  height: 64px;
+  background: #f0f4f8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #1e90ff;
+  margin-bottom: 24px;
+}
+
+.mvv-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 16px;
+}
+
+.mvv-card p {
+  font-size: 1rem;
+  line-height: 1.618;
+  color: #64748b;
+}
+
+/* ================================
+   STATS SECTION
+   ================================ */
+
+.stats-section {
+  background: linear-gradient(135deg, #0a3d62 0%, #072d4a 100%);
+  color: white;
+  padding: 80px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1e90ff;
+  line-height: 1;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+/* ================================
+   TEAM / LEADERSHIP GRID
+   ================================ */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.team-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+.team-img-box {
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background: #eef2f6;
+}
+
+.team-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: grayscale(20%);
+}
+
+.team-card:hover .team-img-box img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.team-info {
+  padding: 24px;
+  text-align: left;
+  position: relative;
+}
+
+.team-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  width: 40px;
+  height: 3px;
+  background: #1e90ff;
+}
+
+.team-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 0.875rem;
+  color: #1e90ff;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-info p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.618;
+  margin-bottom: 16px;
+}
+
+.team-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.team-social a {
+  color: #94a3b8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.team-social a:hover {
+  color: #1e90ff;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   CULTURE SECTION
+   ================================ */
+
+.culture-grid.single-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.culture-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.culture-icon {
+  color: #1e90ff;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.culture-item h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 8px;
+}
+
+.culture-item p {
+  font-size: 1rem;
+  line-height: 1.618;
+  color: #64748b;
+}
+
+/* ================================
+   RESPONSIVE - GOLDEN RATIO BREAKPOINTS
+   ================================ */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .hero-split,
+  .story-grid {
+    gap: 100px;
+  }
+
+  .team-grid {
+    gap: 40px;
+  }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (max-width: 1399px) {
+  .section-padding {
+    padding: 100px 0;
+  }
+
+  .hero-split,
+  .story-grid {
+    gap: 64px;
+  }
+}
+
+/* Laptop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .section-padding {
+    padding: 80px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 3rem;
+  }
+
+  .section-header h2,
+  .story-text h2,
+  .hero-text h2 {
+    font-size: 2.25rem;
+  }
+
+  .hero-split,
+  .story-grid {
+    gap: 56px;
+  }
+
+  .mvv-grid {
+    gap: 32px;
+  }
+
+  .mvv-card {
+    padding: 32px;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (max-width: 991px) {
+  .section-padding {
+    padding: 64px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-header h2,
+  .story-text h2,
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+
+  .hero-split,
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: left;
+  }
+
+  .story-image,
+  .hero-visual {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .mvv-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .team-img-box {
+    height: 320px;
+  }
+}
+
+/* Tablet Portrait (640px - 767px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .section-padding {
+    padding: 56px 0;
+  }
+
+  .page-hero {
+    padding-top: 140px !important;
+    padding-bottom: 80px !important;
+    height: auto !important;
+  }
+
+  .page-hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .page-hero p {
+    font-size: 1.125rem;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-header h2,
+  .story-text h2,
+  .hero-text h2 {
+    font-size: 1.875rem;
+  }
+
+  .story-text p,
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-split,
+  .story-grid {
+    gap: 40px;
+  }
+
+  .mvv-card {
+    padding: 28px;
+  }
+
+  .mvv-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.3rem;
+  }
+
+  .stat-number {
+    font-size: 2.75rem;
+  }
+
+  .stats-grid {
+    gap: 28px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .team-img-box {
+    height: 350px;
+  }
+
+  .team-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Large (480px - 639px) */
+@media (max-width: 639px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-padding {
+    padding: 48px 0;
+  }
+
+  .page-hero {
+    padding-top: 120px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .page-hero p {
+    font-size: 1rem;
+  }
+
+  .subheading {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+
+  .section-header h2,
+  .story-text h2,
+  .hero-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .story-highlight {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .mvv-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .mvv-card p {
+    font-size: 0.9375rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8125rem;
+  }
+
+  .team-img-box {
+    height: 300px;
+  }
+
+  .culture-item {
+    gap: 16px;
+  }
+
+  .culture-icon {
+    font-size: 1.3rem;
+  }
+
+  .culture-item h4 {
+    font-size: 1.125rem;
+  }
+
+  .culture-item p {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Mobile Small (max 479px) */
+@media (max-width: 479px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  .page-hero {
+    padding-top: 100px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .page-hero h1 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .page-hero p {
+    font-size: 0.9375rem;
+  }
+
+  .subheading {
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-header h2,
+  .story-text h2,
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p,
+  .story-text p,
+  .hero-text p {
+    font-size: 0.9375rem;
+  }
+
+  .hero-split,
+  .story-grid {
+    gap: 32px;
+  }
+
+  .story-highlight {
+    padding: 16px;
+    font-size: 0.9375rem;
+  }
+
+  .signature {
+    max-width: 160px;
+  }
+
+  .mvv-card {
+    padding: 24px;
+  }
+
+  .mvv-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .mvv-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+
+  .mvv-card p {
+    font-size: 0.875rem;
+  }
+
+  .stats-section {
+    padding: 60px 0;
+  }
+
+  .stats-grid {
+    gap: 28px;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .team-img-box {
+    height: 280px;
+  }
+
+  .team-info {
+    padding: 20px;
+  }
+
+  .team-name {
+    font-size: 1.125rem;
+  }
+
+  .team-role {
+    font-size: 0.8125rem;
+  }
+
+  .team-info p {
+    font-size: 0.875rem;
+  }
+
+  .team-social a {
+    font-size: 0.9375rem;
+  }
+
+  .culture-item {
+    gap: 14px;
+  }
+
+  .culture-icon {
+    font-size: 1.2rem;
+  }
+
+  .culture-item h4 {
+    font-size: 1rem;
+  }
+
+  .culture-item p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Extra Small Mobile (max 360px) */
+@media (max-width: 360px) {
+  .page-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .section-header h2,
+  .story-text h2,
+  .hero-text h2 {
+    font-size: 1.375rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .team-img-box {
+    height: 260px;
+  }
+}

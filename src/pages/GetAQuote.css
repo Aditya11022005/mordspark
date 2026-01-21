@@ -1,0 +1,417 @@
+.quote-root {
+  /* Palette */
+  --clr-primary: #0a3d62;
+  --clr-primary-dark: #072d4a;
+  --clr-secondary: #1e90ff;
+  --clr-secondary-hover: #1873cc;
+  --clr-white: #ffffff;
+  --clr-light: #f0f4f8;
+  --clr-border: #e2e8f0;
+  --clr-text-heading: #0a1a2f;
+  --clr-text-body: #3a4a5a;
+  --clr-text-muted: #64748b;
+  --clr-success: #10b981;
+  --clr-error: #ef4444;
+
+  /* Spacing (Golden Ratio Scale) */
+  --sp-xs: 8px;
+  --sp-sm: 16px;
+  --sp-md: 24px;
+  --sp-lg: 40px;
+  --sp-xl: 64px;
+  --sp-xxl: 104px;
+
+  /* Typography */
+  --font-body: "Inter", sans-serif;
+  --font-head: "Poppins", sans-serif;
+
+  /* UI Elements */
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.quote-root img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.quote-root a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+.quote-root ul {
+  list-style: none;
+}
+
+/* Typography */
+.quote-root h1,
+.quote-root h2,
+.quote-root h3,
+.quote-root h4,
+.quote-root h5 {
+  font-family: var(--font-head);
+  color: var(--clr-text-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--sp-sm);
+}
+.quote-root h1 {
+  font-size: 3.5rem;
+}
+.quote-root h2 {
+  font-size: 2.5rem;
+}
+.quote-root h3 {
+  font-size: 1.5rem;
+}
+.quote-root h4 {
+  font-size: 1.25rem;
+}
+.quote-root .text-center {
+  text-align: center;
+}
+
+/* Layout */
+.quote-root .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+  width: 100%;
+}
+.quote-root .section-padding {
+  padding: var(--sp-xxl) 0;
+}
+.quote-root .bg-light {
+  background-color: var(--clr-light);
+}
+
+/* Buttons */
+.quote-root .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+.quote-root .btn-primary {
+  background: var(--clr-primary);
+  color: white;
+}
+.quote-root .btn-primary:hover {
+  background: var(--clr-primary-dark);
+  transform: translateY(-2px);
+}
+.quote-root .btn-primary:disabled {
+  background: var(--clr-text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+.quote-root .btn-secondary {
+  background: var(--clr-secondary);
+  color: white;
+}
+.quote-root .btn-secondary:hover {
+  background: var(--clr-secondary-hover);
+  transform: translateY(-2px);
+}
+
+/* Accessibility */
+.quote-root .skip-link {
+  position: absolute;
+  top: -999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-primary);
+  color: white;
+  padding: 10px;
+  z-index: 9999;
+}
+.quote-root .skip-link:focus {
+  top: 0;
+}
+
+/* =========================================
+   FORM SECTION
+   ========================================= */
+.quote-root .form-section {
+  padding-top: var(--sp-xl);
+}
+
+.form-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 50px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--clr-border);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quote-root .form-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-secondary);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--clr-border);
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+.quote-root .form-section-title:first-of-type {
+  margin-top: 0;
+}
+
+.quote-root .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.quote-root .form-group {
+  margin-bottom: 5px;
+}
+.quote-root .form-group.full-width {
+  grid-column: span 2;
+}
+
+.quote-root label {
+  display: block;
+  font-weight: 600;
+  color: var(--clr-primary);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.quote-root label span {
+  color: var(--clr-error);
+}
+
+.quote-root input,
+.quote-root select,
+.quote-root textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--clr-text-heading);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.quote-root input:focus,
+.quote-root select:focus,
+.quote-root textarea:focus {
+  outline: none;
+  border-color: var(--clr-secondary);
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.1);
+}
+.quote-root textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* File Upload */
+.quote-root input[type="file"] {
+  padding: 10px 0;
+  border: none;
+}
+
+/* Error Message */
+.quote-root .error-msg {
+  color: var(--clr-error);
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: none;
+}
+.quote-root input.invalid,
+.quote-root select.invalid {
+  border-color: var(--clr-error);
+}
+
+/* =========================================
+   WHY CHOOSE US
+   ========================================= */
+.quote-root .features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+  margin-top: var(--sp-xxl);
+}
+.quote-root .feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+  transition: 0.3s;
+}
+.quote-root .feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.quote-root .feature-icon {
+  font-size: 2rem;
+  color: var(--clr-secondary);
+  margin-bottom: 15px;
+}
+.quote-root .feature-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.quote-root .feature-card p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--clr-text-muted);
+}
+
+/* =========================================
+   CTA & CONTACT STRIP
+   ========================================= */
+.quote-root .cta-section {
+  background: linear-gradient(135deg, #1e90ff 0%, #0a3d62 100%);
+  text-align: center;
+  color: white;
+}
+.quote-root .contact-strip {
+  background: var(--clr-light);
+  border-top: 1px solid var(--clr-border);
+  padding: 25px 0;
+  font-size: 0.95rem;
+}
+.quote-root .strip-flex {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  color: var(--clr-text-body);
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+.quote-root .strip-item i {
+  color: var(--clr-secondary);
+  margin-right: 8px;
+}
+
+/* =========================================
+   RESPONSIVE - LARGE TABLETS (1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+  .quote-root h1 {
+    font-size: 3rem;
+  }
+  .quote-root h2 {
+    font-size: 2.2rem;
+  }
+
+  .form-card {
+    padding: 40px;
+  }
+
+  .quote-root .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - TABLETS (768px)
+   ========================================= */
+@media (max-width: 768px) {
+  .quote-root h1 {
+    font-size: 2.5rem;
+  }
+  .quote-root h2 {
+    font-size: 2rem;
+  }
+  .quote-root h4 {
+    font-size: 1.15rem;
+  }
+
+  .quote-root .section-padding {
+    padding: var(--sp-xl) 0;
+    margin-top: 60px;
+  }
+
+  .form-card {
+    padding: 30px;
+  }
+
+  .quote-root .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .quote-root .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .quote-root .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+  }
+
+  .quote-root .strip-flex {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE (480px)
+   ========================================= */
+@media (max-width: 480px) {
+  .quote-root h1 {
+    font-size: 2rem;
+  }
+  .quote-root h2 {
+    font-size: 1.75rem;
+  }
+  .quote-root h4 {
+    font-size: 1.1rem;
+  }
+
+  .quote-root .container {
+    padding: 0 var(--sp-sm);
+  }
+
+  .quote-root .section-padding {
+    padding: var(--sp-lg) 0;
+  }
+
+  .form-card {
+    padding: 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .quote-root .form-section-title {
+    font-size: 1.1rem;
+    margin-top: 25px;
+  }
+
+  .quote-root input,
+  .quote-root select,
+  .quote-root textarea {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .quote-root .btn {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .quote-root label {
+    font-size: 0.9rem;
+  }
+
+  .quote-root .feature-card {
+    padding: 20px;
+  }
+}

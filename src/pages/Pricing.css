@@ -1,0 +1,245 @@
+ 
+      /* =========================================
+         1. GLOBAL DESIGN SYSTEM
+         ========================================= */
+.pricing-root  {
+        /* Colors */
+        --clr-primary: #0a3d62;
+        --clr-primary-dark: #072d4a;
+        --clr-secondary: #1e90ff;
+        --clr-secondary-hover: #1873cc;
+        --clr-white: #ffffff;
+        --clr-light: #f0f4f8;
+        --clr-border: #e2e8f0;
+        --clr-text-heading: #0a1a2f;
+        --clr-text-body: #3a4a5a;
+        --clr-text-muted: #64748b;
+        --clr-success: #10b981;
+
+        /* Spacing (Golden Ratio Scale) */
+        --sp-xs: 8px;
+        --sp-sm: 16px;
+        --sp-md: 24px;
+        --sp-lg: 40px;
+        --sp-xl: 64px;
+        --sp-xxl: 104px;
+
+        /* Typography */
+        --font-body: "Inter", sans-serif;
+        --font-head: "Poppins", sans-serif;
+
+        /* UI Elements */
+        --radius-md: 6px;
+        --radius-lg: 12px;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05);
+        --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+      }
+
+      .pricing-root img { max-width: 100%; height: auto; display: block; }
+      .pricing-root a { text-decoration: none; color: inherit; transition: 0.2s; }
+      .pricing-root ul { list-style: none; }
+
+      /* Typography */
+      .pricing-root h1, .pricing-root h2, .pricing-root h3, .pricing-root h4 {
+        font-family: var(--font-head);
+        color: var(--clr-text-heading);
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: var(--sp-sm);
+      }
+      .pricing-root h1 { font-size: 3.5rem; }
+      .pricing-root h2 { font-size: 2.5rem; }
+      .pricing-root h3 { font-size: 1.5rem; }
+      .pricing-root p { margin-bottom: var(--sp-md); max-width: 65ch; }
+      .pricing-root .text-center { text-align: center; }
+      
+      /* Layout */
+      .pricing-root .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--sp-md); width: 100%; }
+      .pricing-root .section-padding { padding: var(--sp-xxl) 0; }
+      .pricing-root .bg-light { background-color: var(--clr-light); }
+
+      /* Buttons */
+      .pricing-root .btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 12px 28px; border-radius: 4px; font-weight: 500; cursor: pointer;
+        transition: 0.3s; border: 2px solid transparent; font-size: 1rem; font-family: var(--font-body);
+      }
+      .pricing-root .btn-primary { background: var(--clr-primary); color: white; }
+      .pricing-root .btn-primary:hover { background: var(--clr-primary-dark); transform: translateY(-2px); }
+      .pricing-root .btn-secondary { background: var(--clr-secondary); color: white; }
+      .pricing-root .btn-secondary:hover { background: var(--clr-secondary-hover); transform: translateY(-2px); }
+      .pricing-root .btn-outline { border-color: var(--clr-primary); color: var(--clr-primary); background: transparent; }
+      .pricing-root .btn-outline:hover { background: var(--clr-primary); color: white; }
+
+      /* Accessibility */
+      .pricing-root .skip-link { position: absolute; top: -999px; left: 50%; transform: translateX(-50%); background: var(--clr-primary); color: white; padding: 10px; z-index: 9999; }
+      .pricing-root .skip-link:focus { top: 0; }
+
+
+      /* =========================================
+         3. HERO SECTION
+         ========================================= */
+      .pricing-root .pricing-hero {
+        padding-top: 180px; padding-bottom: 80px;
+        background: linear-gradient(135deg, #0a3d62 0%, #072d4a 100%);
+        color: white; position: relative;
+      }
+      .pricing-root .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-xxl); align-items: center; }
+      .pricing-root .hero-text h1 { color: white; font-size: 3.2rem; }
+      .pricing-root .hero-text p { color: #e2e8f0; font-size: 1.15rem; }
+      .pricing-root .hero-visual img { border-radius: var(--radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); }
+
+      /* =========================================
+         4. PRICING TOGGLE
+         ========================================= */
+      .pricing-root .toggle-container {
+        text-align: center; margin-top: -40px; margin-bottom: var(--sp-xl);
+        position: relative; z-index: 10;
+      }
+      .toggle-wrapper {
+        background: white; display: inline-flex; align-items: center; gap: 15px;
+        padding: 15px 30px; border-radius: 50px;
+        box-shadow: var(--shadow-lg); border: 1px solid var(--clr-border);
+      }
+      .pricing-root .toggle-label { font-weight: 600; color: var(--clr-text-heading); font-size: 1rem; cursor: pointer; transition: 0.3s; }
+      .pricing-root .toggle-label.active { color: var(--clr-secondary); }
+
+      /* The Switch */
+      .pricing-root .switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+      .pricing-root .switch input { opacity: 0; width: 0; height: 0; }
+      .pricing-root .slider {
+        position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #ccc; transition: .4s; border-radius: 34px;
+      }
+      .pricing-root .slider:before {
+        position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px;
+        background-color: white; transition: .4s; border-radius: 50%;
+      }
+      .pricing-root input:checked + .slider { background-color: var(--clr-secondary); }
+      .pricing-root input:focus + .slider { box-shadow: 0 0 1px var(--clr-secondary); }
+      .pricing-root input:checked + .slider:before { transform: translateX(24px); }
+
+      .pricing-root .discount-badge {
+        background: #e0f2fe; color: var(--clr-secondary); font-size: 0.75rem;
+        font-weight: 700; padding: 4px 10px; border-radius: 20px; margin-left: 10px;
+        text-transform: uppercase;
+      }
+
+      /* =========================================
+         5. PRICING CARDS
+         ========================================= */
+      .pricing-root .pricing-grid {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-lg);
+        align-items: center; /* Center vertically so scaled card works */
+      }
+      .pricing-root .pricing-card {
+        background: white; border: 1px solid var(--clr-border);
+        border-radius: var(--radius-lg); padding: 40px 30px;
+        text-align: center; transition: 0.3s; position: relative;
+        display: flex; flex-direction: column; height: 100%;
+      }
+      .pricing-root .pricing-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); border-color: var(--clr-secondary); }
+      
+      /* Popular Card Styles */
+      .pricing-root .pricing-card.popular {
+        transform: scale(1.05); border: 2px solid var(--clr-secondary);
+        box-shadow: var(--shadow-xl); z-index: 2;
+      }
+      .pricing-root .pricing-card.popular:hover { transform: scale(1.05) translateY(-5px); }
+      .pricing-root .popular-badge {
+        position: absolute; top: 0; left: 50%; transform: translateX(-50%) translateY(-50%);
+        background: var(--clr-secondary); color: white; padding: 6px 16px;
+        border-radius: 20px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase;
+      }
+
+      .pricing-root .plan-name { font-size: 1.25rem; color: var(--clr-text-muted); font-weight: 500; margin-bottom: 10px; }
+      .pricing-root .plan-price { font-size: 3rem; color: var(--clr-primary); font-weight: 700; line-height: 1; margin-bottom: 20px; }
+      .pricing-root .plan-period { font-size: 1rem; color: var(--clr-text-muted); font-weight: 400; }
+      .pricing-root .plan-desc { color: var(--clr-text-body); margin-bottom: 30px; }
+        
+      .pricing-root .feature-list { text-align: left; margin-bottom: 30px; flex-grow: 1; }
+      .pricing-root .feature-list li { margin-bottom: 12px; display: flex; align-items: center; color: var(--clr-text-body); }
+      .pricing-root .feature-list li i { color: var(--clr-success); margin-right: 10px; font-size: 1.1rem; }
+      .pricing-root .feature-list li.disabled { color: #ccc; }
+      .pricing-root .feature-list li.disabled i { color: #ccc; }
+      /* =========================================
+         6. COMPARISON TABLE
+         ========================================= */
+      .pricing-root .table-wrapper { overflow-x: auto; margin-top: var(--sp-xl); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); }
+      .pricing-root .compare-table { width: 100%; border-collapse: collapse; min-width: 700px; background: white; }
+      .pricing-root .compare-table th, .pricing-root .compare-table td {
+        padding: 20px; text-align: center; border-bottom: 1px solid var(--clr-border);
+      }
+      .pricing-root .compare-table th:first-child, .pricing-root .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--clr-primary); }
+      .pricing-root .compare-table th { background: var(--clr-light); color: var(--clr-text-heading); font-size: 1.1rem; }
+      .pricing-root .compare-table tr:last-child td { border-bottom: none; }
+      .pricing-root .check-icon { color: var(--clr-success); font-size: 1.2rem; }
+      .pricing-root .cross-icon { color: #ccc; font-size: 1.2rem; }
+
+      /* =========================================
+         7. ADD-ONS
+         ========================================= */
+      .pricing-root .addons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-md); }
+      .pricing-root .addon-card {
+        background: white; padding: 25px; border: 1px solid var(--clr-border);
+        border-radius: var(--radius-md); display: flex; align-items: center; gap: 15px;
+      }
+      .pricing-root .addon-icon { font-size: 1.8rem; color: var(--clr-secondary); }
+      .pricing-root .addon-info h4 { margin: 0; font-size: 1.1rem; }
+      .pricing-root .addon-info p { margin: 0; font-size: 0.9rem; color: var(--clr-text-muted); }
+      .pricing-root .addon-price { margin-left: auto; font-weight: 700; color: var(--clr-primary); }
+
+      /* =========================================
+         8. FAQ ACCORDION
+         ========================================= */
+      .pricing-root .faq-container { max-width: 800px; margin: 0 auto; }
+      .pricing-root .accordion-item { border-bottom: 1px solid var(--clr-border); }
+      .pricing-root .accordion-header {
+        width: 100%; text-align: left; padding: 20px 0; background: none; border: none;
+        font-size: 1.1rem; font-weight: 600; color: var(--clr-primary); cursor: pointer;
+        display: flex; justify-content: space-between; align-items: center;
+      }
+      .pricing-root .accordion-header:hover { color: var(--clr-secondary); }
+      .accordion-icon { transition: transform 0.3s; }
+      .pricing-root .accordion-header.active .accordion-icon { transform: rotate(180deg); }
+      .pricing-root .accordion-body {
+        max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+        color: var(--clr-text-body); padding-right: 20px;
+      }
+      .pricing-root .accordion-body p { padding-bottom: 20px; margin: 0; }
+      /* =========================================
+         9. TESTIMONIALS
+         ========================================= */
+      .pricing-root .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-lg); }
+      .pricing-root .testi-card { background: white; padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); }
+      .pricing-root .stars { color: #f59e0b; margin-bottom: 15px; }
+      .pricing-root .client-meta { display: flex; align-items: center; gap: 15px; margin-top: 20px; }
+      .pricing-root .client-img { width: 50px; height: 50px; background: #ddd; border-radius: 50%; }
+      .pricing-root .client-name { font-weight: 600; }
+      /* =========================================
+         10. CTA & CONTACT STRIP
+         ========================================= */
+      .pricing-root .cta-section {
+        background: linear-gradient(135deg, #1e90ff 0%, #0a3d62 100%);
+        text-align: center; color: white;
+      }
+      .pricing-root .contact-strip { background: var(--clr-light); border-top: 1px solid var(--clr-border); padding: 25px 0; font-size: 0.95rem; }
+      .pricing-root .strip-flex { display: flex; justify-content: center; gap: 40px; color: var(--clr-text-body); font-weight: 500; }
+      .pricing-root .strip-item i { color: var(--clr-secondary); margin-right: 8px; }
+
+
+
+      /* =========================================
+         RESPONSIVE
+         ========================================= */
+      @media (max-width: 1024px) {
+        .pricing-root .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; gap: 40px; }
+        .pricing-root .pricing-card.popular { transform: none; }
+        .pricing-root .pricing-card.popular:hover { transform: translateY(-5px); }
+        .pricing-root .hero-grid { grid-template-columns: 1fr; gap: var(--sp-lg); text-align: center; }
+        .pricing-root .hero-visual { display: none; } /* Hide heavy visual on tablet to focus on price */
+        .pricing-root .addons-grid, .pricing-root .testimonial-grid { grid-template-columns: 1fr; }
+        .pricing-root .footer-grid { grid-template-columns: 1fr 1fr; }
+      }
